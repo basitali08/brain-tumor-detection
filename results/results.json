@@ -1,0 +1,25 @@
+{
+  "model": "ResNet18 (ImageNet pretrained, transfer learning)",
+  "dataset": "Brain Tumor MRI (PranomVignesh/MRI-Images-of-Brain-Tumor)",
+  "num_classes": 4,
+  "classes": [
+    "glioma",
+    "meningioma",
+    "pituitary",
+    "no_tumor"
+  ],
+  "train_samples": 120,
+  "test_samples": 120,
+  "test_accuracy": 1.0,
+  "per_class_accuracy": {
+    "glioma": 1.0,
+    "meningioma": 1.0,
+    "pituitary": 1.0,
+    "no_tumor": 1.0
+  },
+  "parameters": {
+    "total": 11441220,
+    "trainable": 11441220
+  },
+  "timestamp": "2026-05-24T17:47:51.121482"
+}

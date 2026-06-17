@@ -1,16 +1,25 @@
-# 🧠 Brain Tumor Detection & Grading AI
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python)](https://python.org)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?logo=pytorch)](https://pytorch.org)
-[![ResNet](https://img.shields.io/badge/Model-ResNet18-005A9C)](https://pytorch.org/hub/pytorch_vision_resnet/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)](https://streamlit.io)
-[![Dataset](https://img.shields.io/badge/Dataset-Brain%20Tumor%20MRI-22c55e)](https://huggingface.co/datasets/PranomVignesh/MRI-Images-of-Brain-Tumor)
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=%F0%9F%A7%A0+Brain+Tumor+Detection+AI;Deep+Learning+Classification+%2B+Grading;ResNet18+Transfer+Learning" alt="Brain Tumor Detection" />
 
-Deep learning system for **brain tumor detection**, **classification**, **grading**, and **size estimation** from MRI scans using transfer learning with ResNet18.
+<br>
+
+<img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e">
+<img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white&labelColor=1a1a2e">
+<img src="https://img.shields.io/badge/Model-ResNet18-005A9C?style=for-the-badge&labelColor=1a1a2e">
+<img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white&labelColor=1a1a2e">
+<img src="https://img.shields.io/badge/Dataset-Brain+Tumor+MRI-22c55e?style=for-the-badge&labelColor=1a1a2e">
+<img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&labelColor=1a1a2e">
+
+<br>
+
+<img src="https://github-readme-stats.vercel.app/api?username=basitali08&show_icons=true&theme=radical&hide_border=true&count_private=true" width="400">
+
+</div>
 
 ---
 
-## 🎯 What It Does
+## What It Does
 
 | Feature | Method | Output |
 |---------|--------|--------|
@@ -22,24 +31,24 @@ Deep learning system for **brain tumor detection**, **classification**, **gradin
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ```mermaid
 graph TD
     A[MRI Scan Input] --> B[Resize 224x224]
-    B --> C[ResNet18<br/>Pre-trained on ImageNet<br/>18 layers · 11.4M params]
-    C --> D[Custom Classification Head<br/>Dropout → 512 → ReLU → Dropout → 4]
-    D --> E[Softmax → Prediction]
+    B --> C[ResNet18 Pre-trained on ImageNet]
+    C --> D[Custom Classification Head]
+    D --> E[Softmax Prediction]
     E --> F{Decision}
-    F -->|Tumor| G[Grading Engine<br/>Glioma: II-IV · Meningioma: I-II · Pituitary: I]
+    F -->|Tumor| G[Grading Engine]
     F -->|No Tumor| H[Healthy Result]
-    G --> I[Size Estimation<br/>Pixel intensity → mm]
-    I --> J[Risk Assessment<br/>High / Moderate / Low]
+    G --> I[Size Estimation]
+    I --> J[Risk Assessment]
 ```
 
 ---
 
-## 📊 Results
+## Results
 
 | Metric | Score |
 |--------|-------|
@@ -59,46 +68,18 @@ graph TD
 
 ---
 
-## 🛠 Tech Stack
+## Dashboard Features
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Framework** | PyTorch 2.0+ | Deep learning engine |
-| **Architecture** | ResNet18 (ImageNet pre-trained) | Transfer learning backbone |
-| **Augmentation** | Random flip, rotation, color jitter | Generalization |
-| **Optimizer** | AdamW + ReduceLROnPlateau | Training |
-| **UI** | Streamlit + Plotly | Interactive dashboard |
-| **Data** | Hugging Face Datasets | MRI images |
+- **Upload MRI** — Drag & drop image analysis
+- **Instant Diagnosis** — Tumor type + confidence score
+- **Tumor Grading** — WHO grade based on classification
+- **Size Estimation** — Pixel-based measurement
+- **Stage Assessment** — Early / Moderate / Advanced
+- **Probability Chart** — Class-wise prediction breakdown
 
 ---
 
-## 📁 Project Structure
-
-```
-brain-tumor-detection/
-├── app.py                          # Streamlit dashboard
-├── src/
-│   └── brain_tumor_pipeline.py     # Training + evaluation pipeline
-├── data/
-│   ├── train/                      # 120 MRI images (30/class)
-│   │   ├── glioma/
-│   │   ├── meningioma/
-│   │   ├── pituitary/
-│   │   └── no_tumor/
-│   └── test/                       # 120 MRI images (30/class)
-├── models/
-│   └── best_model.pth              # Trained ResNet18 weights
-├── results/
-│   ├── confusion_matrix.png        # Classification heatmap
-│   ├── training_history.png        # Loss + accuracy curves
-│   └── results.json                # Full metrics
-├── requirements.txt
-└── README.md
-```
-
----
-
-## 🚀 How to Run
+## Quick Start
 
 ```bash
 # 1. Install
@@ -113,14 +94,49 @@ streamlit run app.py
 
 ---
 
-## 🖥 Dashboard Features
+## Project Structure
 
-- **Upload MRI** — Drag & drop image analysis
-- **Instant Diagnosis** — Tumor type + confidence score
-- **Tumor Grading** — WHO grade based on classification
-- **Size Estimation** — Pixel-based measurement
-- **Stage Assessment** — Early / Moderate / Advanced
-- **Probability Chart** — Class-wise prediction breakdown
+```
+brain-tumor-detection/
+├── app.py                          # Streamlit dashboard
+├── src/
+│   └── brain_tumor_pipeline.py     # Training + evaluation pipeline
+├── data/
+│   ├── train/                      # 120 MRI images (30/class)
+│   └── test/                       # 120 MRI images (30/class)
+├── models/
+│   └── best_model.pth              # Trained ResNet18 weights
+├── results/
+│   ├── confusion_matrix.png
+│   ├── training_history.png
+│   └── results.json
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Framework** | PyTorch 2.0+ | Deep learning engine |
+| **Architecture** | ResNet18 (ImageNet pre-trained) | Transfer learning backbone |
+| **Augmentation** | Random flip, rotation, color jitter | Generalization |
+| **Optimizer** | AdamW + ReduceLROnPlateau | Training |
+| **UI** | Streamlit + Plotly | Interactive dashboard |
+| **Data** | Hugging Face Datasets | MRI images |
+
+---
+
+<div align="center">
+
+**Built with Python, PyTorch, ResNet18, Streamlit**
+
+[![GitHub stars](https://img.shields.io/github/stars/basitali08/brain-tumor-detection?style=social)](https://github.com/basitali08/brain-tumor-detection)
+[![GitHub forks](https://img.shields.io/github/forks/basitali08/brain-tumor-detection?style=social)](https://github.com/basitali08/brain-tumor-detection)
+
+</div>
 
 ---
 
